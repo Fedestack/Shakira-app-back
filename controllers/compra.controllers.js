@@ -26,7 +26,7 @@ export default class CompraControllers {
     }
 
     createCompra = async (req, res) => {
-        const { dni, codigo_perfume, codigo_recital } = req.query;
+        const { dni, codigo_perfume, codigo_recital } = req.params;
 
         if (!codigo_perfume && !codigo_recital) {
             res.status(400).json({ error: 'Debe proporcionar un código de perfume o recital para crear una compra.' });
