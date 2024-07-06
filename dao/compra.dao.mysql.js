@@ -20,6 +20,11 @@ export default class CompraDaoMysql extends Mysql {
         return result;
     }
 
+    async generateNumeroDeCompra() {
+        const query = `SELECT COALESCE(MAX(numero_de_compra), 0) + 1 AS nuevo_numero FROM ${this.table}`;
+        const [result] = await this.connection.promise().query(query);
+        return result[0].nuevo_numero;
+    }
 
 
     async createCompraWithBoth(dni, codigo_perfume, codigo_recital) {
@@ -49,11 +54,14 @@ export default class CompraDaoMysql extends Mysql {
         const precio_entrada = recital[0].precio_entrada;
         const monto_total = precio_perfume + precio_entrada;
 
-        const compraQuery = `INSERT INTO ${this.table} (fecha_de_compra, dni_cliente, codigo_perfume, codigo_recital, precio_perfume, precio_entrada, monto_total) VALUES (?, ?, ?, ?, ?, ?, ?)`;
-        const [result] = await this.connection.promise().query(compraQuery, [fecha_de_compra, dni, codigo_perfume, codigo_recital, precio_perfume, precio_entrada, monto_total]);
+        // Generar el número de compra
+        const numero_de_compra = await this.generateNumeroDeCompra();
+
+        const compraQuery = `INSERT INTO ${this.table} (numero_de_compra,fecha_de_compra, dni_cliente, codigo_perfume, codigo_recital, precio_perfume, precio_entrada, monto_total) VALUES (?, ?, ?, ?, ?, ?, ?)`;
+        const [result] = await this.connection.promise().query(compraQuery, [numero_de_compra,fecha_de_compra, dni, codigo_perfume, codigo_recital, precio_perfume, precio_entrada, monto_total]);
 
         return {
-            numero_de_compra: result.insertId,
+            numero_de_compra,
             fecha_de_compra,
             dni_cliente: dni,
             codigo_perfume,
@@ -84,12 +92,15 @@ export default class CompraDaoMysql extends Mysql {
         const precio_perfume = perfume[0].precio_perfume;
         const monto_total = precio_perfume;
 
-        const compraQuery = `INSERT INTO COMPRAS (fecha_de_compra, dni_cliente, codigo_perfume, precio_perfume, monto_total) VALUES (?, ?, ?, ?, ?)`;
-        const [result] = await this.connection.promise().query(compraQuery, [fecha_de_compra, dni, codigo_perfume, precio_perfume, monto_total]);
+        // Generar el número de compra
+        const numero_de_compra = await this.generateNumeroDeCompra();
+
+        const compraQuery = `INSERT INTO COMPRAS (numero_de_compra, fecha_de_compra, dni_cliente, codigo_perfume, precio_perfume, monto_total) VALUES (?, ?, ?, ?, ?)`;
+        const [result] = await this.connection.promise().query(numero_de_compra, compraQuery, [fecha_de_compra, dni, codigo_perfume, precio_perfume, monto_total]);
 
 
         return {
-            numero_de_compra: result.insertId,
+            numero_de_compra,
             fecha_de_compra,
             dni_cliente: dni,
             codigo_perfume,
@@ -117,11 +128,14 @@ export default class CompraDaoMysql extends Mysql {
         const precio_entrada = recital[0].precio_entrada;
         const monto_total = precio_entrada;
 
-        const compraQuery = `INSERT INTO COMPRAS (fecha_de_compra, dni_cliente, codigo_recital, precio_entrada, monto_total) VALUES (?, ?, ?, ?, ?)`;
-        const [result] = await this.connection.promise().query(compraQuery, [fecha_de_compra, dni, codigo_recital, precio_entrada, monto_total]);
+         // Generar el número de compra
+        const numero_de_compra = await this.generateNumeroDeCompra();
+
+        const compraQuery = `INSERT INTO COMPRAS (numero_de_compra, fecha_de_compra, dni_cliente, codigo_recital, precio_entrada, monto_total) VALUES (?, ?, ?, ?, ?)`;
+        const [result] = await this.connection.promise().query(compraQuery, [numero_de_compra, fecha_de_compra, dni, codigo_recital, precio_entrada, monto_total]);
 
         return {
-            numero_de_compra: result.insertId,
+            numero_de_compra,
             fecha_de_compra,
             dni_cliente: dni,
             codigo_recital,
