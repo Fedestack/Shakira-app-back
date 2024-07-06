@@ -187,6 +187,10 @@ export default class CompraDaoMysql extends Mysql {
         return result;
     }
 
+    async deleteAllCompras () {
+        const query = `DELETE FROM ${this.table}`;
+        const [result] = await this.connection.promise().query(query);
+        return result;
 
 }
-
+}

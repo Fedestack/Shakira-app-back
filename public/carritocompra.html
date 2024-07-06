@@ -1,88 +1,77 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito de Compras</title>
-    <link rel="stylesheet" href="carrito.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="carritoCompra.css">
-    <link rel="shortcut icon" href="favicon.jpg" type="image/jpg">
+    <link rel="stylesheet" href="carrito.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+    <link rel="stylesheet" href="carritoCompra.css" />
+    <link rel="shortcut icon" href="favicon.jpg" type="image/jpg" />
 </head>
 
 <body>
     <header class="header">
         <div class="favicon">
-            <img src="./img/shakira.jpg" alt="Logo" class="rotate">
+            <img src="./img/shakira.jpg" alt="Logo" class="rotate" />
         </div>
 
         <nav class="nav">
             <ul class="menu-container-list">
-                <li class="menu-container-item"><a class="menu-item" href="index.html" target="_blank">INICIO</a></li>
-                <li class="menu-container-item"><a class="menu-item" href="indexmusica.html" target="_blank">MÚSICA</a></li>
-                <li class="menu-container-item"><a class="menu-item" href="indexTienda.html" target="_blank">FRAGANCIAS</a></li>
-                <li class="menu-container-item"><a class="menu-item" href="indextour.html" target="_blank">TOUR</a></li>
+                <li class="menu-container-item">
+                    <a class="menu-item" href="index.html" target="_blank">INICIO</a>
+                </li>
+                <li class="menu-container-item">
+                    <a class="menu-item" href="indexmusica.html" target="_blank">MÚSICA</a>
+                </li>
+                <li class="menu-container-item">
+                    <a class="menu-item" href="indexTienda.html" target="_blank">FRAGANCIAS</a>
+                </li>
+                <li class="menu-container-item">
+                    <a class="menu-item" href="indextour.html" target="_blank">TOUR</a>
+                </li>
             </ul>
         </nav>
         <div class="favicon">
-            <img src="./img/shakira.jpg" alt="Logo" class="rotate2">
+            <img src="./img/shakira.jpg" alt="Logo" class="rotate2" />
         </div>
     </header>
 
     <main>
+        <h1>Compras</h1>
+        <button id="create-compra">Create Compra</button>
+        <button id="update-compra">Update Compra</button>
+
         <h2 class="carrito-title">Mis Productos</h2>
 
         <div class="carrito-container">
             <!-- Aquí se mostrarán los productos agregados al carrito -->
             <div class="carrito-productos">
-                <!-- Producto 1 -->
-                <div class="carrito-producto">
-                    <img src="img/rojo-nav.png" alt="Perfume Rojo">
-                    <h3>ROJO</h3>
-                    <p>El primer Eau de Parfum del portfolio de Shakira Perfumes. Una oda a las mujeres empoderadas alrededor del mundo.</p>
-                    <p class="precio">$100.000</p>
-                    <button class="eliminar-producto">Eliminar</button>
+                <div class="total-container">
+                    <p class="total">Total: $0.00</p>
+                    <button class="confirmar-compra">Confirmar Compra</button>
                 </div>
-
-                <!-- Producto 2 -->
-                <div class="carrito-producto">
-                    <img src="img/dance-star-midnight-nav.png" alt="Perfume Dance Star Midnight">
-                    <h3>DANCE STAR MIDNIGHT</h3>
-                    <p>La nueva fragancia magnética y deslumbrante de edición limitada para las mujeres que nacieron para brillar.</p>
-                    <p class="precio">$100.000</p>
-                    <button class="eliminar-producto">Eliminar</button>
-                </div>
-
-                <!-- Producto 3 -->
-                <div class="carrito-producto">
-                    <img src="img/envivo.webp" alt="Foto en vivo">
-                    <h3>Fecha de Tour</h3>
-                    <p>Nov 02 Acrisure Arena, Palm Desert CA</p>
-                    <p class="precio">$100.000</p>
-                    <button class="eliminar-producto">Eliminar</button>
-                </div>
-            </div>
-
-            <div class="total-container">
-                <p class="total">Total: $300.000</p>
-                <button class="confirmar-compra">Confirmar Compra</button>
             </div>
         </div>
     </main>
     <script src="carritocompra.js"></script>
-</body>
+
     <footer>
         <h3>Redes sociales</h3>
-		<div class="iconosRedes"></div>
-		<a href="https://www.youtube.com/channel/UCYLNGLIzMhRTi6ZOLjAPSmw" target="_blank"><i
-				class="fab fa-youtube"></i></a>
-		<a href="https://www.facebook.com/shakira/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
-		<a href="https://www.instagram.com/shakira/" target="_blank"><i class="fab fa-instagram"></i></a>
-		<a href="https://open.spotify.com/intl-es/artist/0EmeFodog0BfCgMzAIvKQp" target="_blank"><i
-				class="fab fa-spotify"></i></a>
-		<a href="https://twitter.com/shakira?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i
-				class="fab fa-twitter"></i></a>
-		<a href="https://www.tiktok.com/@shakira?lang=es" target="_blank"><i class="fab fa-tiktok"></i></a>
-		<a href="https://music.apple.com/us/artist/shakira/889327" target="_blank"><i class="fab fa-apple"></i></a>
-		<h4>2024 Sony Music Entertainment. Todos los derechos reservados</h4>
-        </footer>
+        <div class="iconosRedes"></div>
+        <a href="https://www.youtube.com/channel/UCYLNGLIzMhRTi6ZOLjAPSmw" target="_blank"><i
+                class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/shakira/?locale=es_LA" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/shakira/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://open.spotify.com/intl-es/artist/0EmeFodog0BfCgMzAIvKQp" target="_blank"><i
+                class="fab fa-spotify"></i></a>
+        <a href="https://twitter.com/shakira?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank"><i
+                class="fab fa-twitter"></i></a>
+        <a href="https://www.tiktok.com/@shakira?lang=es" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://music.apple.com/us/artist/shakira/889327" target="_blank"><i class="fab fa-apple"></i></a>
+        <h4>2024 Sony Music Entertainment. Todos los derechos reservados</h4>
+    </footer>
+</body>
+
+</html>

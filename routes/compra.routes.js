@@ -16,6 +16,7 @@ export default class CompraRoutes extends routes {
             .post('/', this.controller.createCompra)
             .put('/', this.controller.updateCompra)
             .delete('/:id', this.controller.deleteCompra)
+            .delete('/', this.controller.deleteAllCompras)
         }
 
 

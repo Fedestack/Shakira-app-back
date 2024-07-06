@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+html {
+    height: fit-content;
+}
+
 body {
     font-family: Helvetica, Arial, sans-serif;
     background-image: url(./img/fondocompra.png);
@@ -14,10 +18,10 @@ body {
     background-size: cover;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     letter-spacing: 1px;
-    height: fit-content;
+    height: 100dvh;
 }
 
 header {
@@ -26,6 +30,8 @@ header {
     padding: 30px 0;
     display: flex;
     justify-content: space-evenly;
+    position: sticky; /* Agregué esta propiedad para que el header se quede fijo en la parte superior */
+    top: 0;
 }
 
 .nav {
@@ -60,7 +66,8 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100dvh;
+    max-width: 50%;
+    flex-grow: 1
 }
 
 .menu-container-list {
@@ -94,7 +101,8 @@ main {
 
 
 .carrito-container {
-    max-width: 800px;
+    
+    min-width: 800px;
     margin: 40px auto;
     padding: 20px;
     background-color: rgb(255, 255, 255, 0.9) ;
@@ -113,8 +121,9 @@ main {
 
 .carrito-productos {
     display: flex;
+    flex-direction: column;
+    flex-flow: column-reverse;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .carrito-producto {
@@ -164,21 +173,26 @@ main {
 
 .total-container {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .total {
-    font-size: 24px;
+    font-size: 25px;
+    font-weight: 800;
     font-weight: bold;
     color: #333;
 }
 
 .confirmar-compra {
+    margin-top: 10px;
     background-color: #4CAF50;
     color: #fff;
     border: none;
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 20px 20px;
+    font-size: 20px;
+    font-weight: 700;
     cursor: pointer;
 }
 
@@ -187,7 +201,6 @@ main {
 }
 
 footer {
-
     color: #ffefc1;
     text-shadow: 0px 0px 9px #f66b40;
     background-color: black;
@@ -195,7 +208,7 @@ footer {
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
-
+    margin-top: auto;
 }
 
 h3 {
@@ -251,4 +264,38 @@ i {
     background-color: #fc3c44;
     color: white;
     box-shadow: 0 0px 40px #fc3c44;
+}
+
+
+.producto-titulo {
+    font-weight: 800;
+    color: #333;
+}
+
+.fecha-compra {
+    font-size: 20px;
+    font-weight: 600;
+    color: #666;
+}
+
+.cliente-compra {
+    font-size: 16px;
+    font-weight: bold;
+    color: #999;
+}
+
+.monto-total {
+    font-size: 23px;
+    font-weight: 800;
+    color: #008000;
+}
+
+.eliminar-compra {
+    background-color: #FF0000;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }

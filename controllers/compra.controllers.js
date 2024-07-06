@@ -59,6 +59,11 @@ export default class CompraControllers {
         res.status(200).json(result);
     }
 
+    deleteAllCompras = async (req,res) => {
+        const result = await this.compradb.deleteAllCompras();
+        res.status(200).json(result);
+    }
+
 }
 
 

@@ -35,19 +35,20 @@
 				<li class="menu-container-item"><a class="menu-item" href="indexTienda.html"
 						target="_blank">FRAGANCIAS</a></li>
 				<li class="menu-container-item"><a class="menu-item" href="indextour.html" target="_blank">TOUR</a></li>
-				<li class="menu-container-item"><a class="menu-item" href="carritocompra.html" target="_blank">
+				<li class="menu-container-item"><a class="menu-item" href="carritocompra.html?showProducts=true">
 					<i class="fi fi-rs-shopping-cart"></i>
 				</a></li>
 			</ul>
+			
 		</nav>
 		<div class="favicon">
 			<img src="./img/shakira.jpg" alt="Logo" class="rotate2">
 		</div>
 	</header>
-
+	
 
 	<main>
-
+		
 		<div class="collection-title-container">
 			<h2 class="collection-title">Shakira collection</h2>
 		</div>
@@ -71,7 +72,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="1">AGREGAR AL CARRITO</button>
 				</div>
 			</div>
 
@@ -91,7 +92,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="2">AGREGAR AL CARRITO</button>
 				</div>
 			</div>
 		</section>
@@ -120,7 +121,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button" onclick="abrirEnOtraPestana()">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="4">AGREGAR AL CARRITO</button>
 				</div>
 			</div>
 
@@ -140,7 +141,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="7">AGREGAR AL CARRITO</button>
 				</div>
 			</div>
 
@@ -150,7 +151,7 @@
 						alt="perfume dance collection fucsia">
 				</div>
 				<div id="p-description-c" class="perfume-description-container">
-					<h3 class="perfume-title">DANCE MIDNIGHT MOUSE</h3>
+					<h3 class="perfume-title">DANCE MIDNIGHT HOUSE</h3>
 					<p class="perfume-description item-5">
 						Una fragancia íntima y luminosa diseñada para
 						empoderarte, para mostrarte tu fuerza interior y tu feminidad para que puedas ser tu propia
@@ -161,7 +162,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="8">AGREGAR AL CARRITO</button>
 				</div>
 			</div>
 
@@ -181,7 +182,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">CAGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="5">CAGREGAR AL CARRITO</button>
 				</div>
 			</div>
 
@@ -202,7 +203,7 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="6">AGREGAR AL CARRITO</button>
 				</div>
 			</div>
 
@@ -222,10 +223,12 @@
 					<p class="perfume-price">100.000</p>
 				</div>
 				<div class="button-container">
-					<button type="button" class="buy-button">AGREGAR AL CARRITO</button>
+					<button type="button" class="buy-button" data-id="3">AGREGAR AL CARRITO</button>
 				</div>
 		</section>
 	</main>
+	<script type="module" src="carritocompra.js"> </script>
+
 
 	<footer>
 		<h3>Redes sociales</h3>
@@ -244,7 +247,4 @@
 
 	</footer>
 </body>
-
-
-
 </html>

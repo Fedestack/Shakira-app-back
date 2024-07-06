@@ -7,12 +7,26 @@ export default class Server {
     static app = express();
 
     static middlewares() {
+        Server.app.use(express.static('public'));
         Server.app.use(express.json());
-        Server.app.use(urlencoded({extended: true}));
+        Server.app.use(urlencoded({ extended: true }));
+        Server.app.use((req, res, next) => {
+            res.header('Access-Control-Allow-Origin', '*');
+            res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+            res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+            next();
+        });
+        Server.app.use(express.static('public', {
+            setHeaders: (res, path) => {
+                if (path.endsWith('.css')) {
+                    res.header('Content-Type', 'text/css');
+                }
+            }
+        }));
     }
 
     static runServer(port) {
-        Server.app.listen(port, () => 
+        Server.app.listen(port, () =>
             console.log(`Server corriendo en el puerto ${port}`));
     }
 
@@ -23,7 +37,7 @@ export default class Server {
         Server.app.use('/compras', compras.router);
     }
 
-    static run (port) {
+    static run(port) {
         Server.middlewares();
         Server.routes();
         Server.runServer(port);
